@@ -2,7 +2,6 @@
   "name": "@devscale/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
   "private": true,
   "dependencies": {
     "@nx/next": "16.8.1",
