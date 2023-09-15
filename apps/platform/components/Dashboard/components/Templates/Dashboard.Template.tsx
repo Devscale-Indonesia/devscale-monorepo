@@ -14,7 +14,9 @@ export const DashboardTemplate = ({ children }: { children: React.ReactNode }) =
   return (
     <main className="flex min-h-screen">
       <DashboardSidebar menu={menu} />
-      <div className="w-[calc(100vw-240px)] p-8">{children}</div>
+      <div className="w-[calc(100vw-240px)] p-8">
+        <div className="max-w-5xl m-auto my-12">{children}</div>
+      </div>
     </main>
   );
 };
