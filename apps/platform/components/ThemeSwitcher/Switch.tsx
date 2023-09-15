@@ -11,7 +11,7 @@ export const Switch = () => {
 
   return (
     <div>
-      The current theme is: {theme}
+      The current theme is: {theme || 'dark'}
       <button onClick={() => setTheme('light')}>Light Mode</button>
       <button onClick={() => setTheme('dark')}>Dark Mode</button>
     </div>
