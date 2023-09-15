@@ -2,7 +2,7 @@ import React from 'react';
 import { BarChart2, Zap, Book, Medal, Code2 } from 'lucide-react';
 import { DashboardSidebar } from './Dashboard.Sidebar';
 
-const menu = [
+const menu: Menu[] = [
   { label: 'Dashboard', href: '/dashboard', icon: <BarChart2 size={17} /> },
   { label: 'Courses', href: '/dashboard/course', icon: <Book size={17} /> },
   { label: 'Leaderboard', href: '/dashboard/leaderboard', icon: <Medal size={17} /> },

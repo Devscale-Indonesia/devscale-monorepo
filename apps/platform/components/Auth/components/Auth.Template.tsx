@@ -8,7 +8,7 @@ export const AuthTemplate = ({ children }: { children: React.ReactNode }) => {
   if (pathname === '/') {
     return (
       <main className="flex h-screen justify-center items-center">
-        <div className="w-[320px]">{children}</div>
+        <div className="w-[280px]">{children}</div>
       </main>
     );
   }

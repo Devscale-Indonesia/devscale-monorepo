@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-medium bg-zinc-50 dark:text-zinc-400 dark:bg-black;
+    @apply text-sm font-medium bg-zinc-50 dark:text-zinc-400 dark:bg-black;
   }
   h1,
   h2,

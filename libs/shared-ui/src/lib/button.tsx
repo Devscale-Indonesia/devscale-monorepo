@@ -1,4 +1,4 @@
-import { tv, type VariantProps } from 'tailwind-variants';
+import { type VariantProps, tv } from 'tailwind-variants';
 
 const button = tv({
   base: 'border-1.5 border-transparent w-full bg-zinc-200 shadow-md shadow-black/20 text-white rounded-lg ',

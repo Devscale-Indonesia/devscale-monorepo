@@ -5,7 +5,7 @@ import { Button } from '@devscale/shared-ui';
 import Logo from '../../../../public/logo.svg';
 
 interface DashboardSidebarProps {
-  menu: any[];
+  menu: Menu[];
 }
 
 export const DashboardSidebar = ({ menu }: DashboardSidebarProps) => {

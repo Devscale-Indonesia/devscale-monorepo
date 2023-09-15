@@ -25,7 +25,9 @@
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nx/typescript"],
-      "rules": {}
+      "rules": {
+        "sort-imports": "error"
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
