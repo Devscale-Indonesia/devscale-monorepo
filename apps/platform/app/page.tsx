@@ -1,9 +1,5 @@
-import { Button } from '@devscale/shared-ui';
+import { Auth } from '../components/Auth/components/Auth';
 
 export default async function Page() {
-  return (
-    <div className="">
-      <Button>Hey</Button>
-    </div>
-  );
+  return <Auth />;
 }

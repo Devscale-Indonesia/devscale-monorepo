@@ -1,16 +1,19 @@
 import { tv, type VariantProps } from 'tailwind-variants';
 
 const button = tv({
-  base: 'font-medium bg-zinc-200 shadow-md shadow-black/20 text-white rounded-lg ',
+  base: 'border-1.5 border-transparent w-full bg-zinc-200 shadow-md shadow-black/20 text-white rounded-lg ',
   variants: {
     color: {
-      primary: 'bg-zinc-800 hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 text-white',
-      secondary: 'bg-zinc-200 text-zinc-800',
+      primary: 'bg-zinc-800  hover:bg-zinc-200 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200 dark:active:bg-zinc-300 text-white',
+      secondary:
+        'bg-zinc-800 hover:bg-zinc-200 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-zinc-800 dark:hover:text-zinc-100 dark:active:bg-zinc-800/50 text-white',
+      ghost: 'bg-transparent text-zinc-500 hover:text-zinc-100 hover:bg-zinc-900 flex gap-3 items-center justify-start',
     },
     size: {
-      sm: 'text-sm px-3 py-1',
-      md: 'text-base px-5 py-2',
-      lg: 'text-lg px-5 py-4',
+      sm: 'px-2 py-1',
+      md: 'py-2 px-4',
+      lg: 'px-2 py-4',
+      icon: 'p-2 w-fit',
     },
   },
   defaultVariants: {
@@ -20,13 +23,18 @@ const button = tv({
 });
 
 type ButtonVariants = VariantProps<typeof button>;
+type NativeProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-interface ButtonProps extends ButtonVariants {
+interface ButtonProps extends Omit<NativeProps, keyof ButtonVariants>, ButtonVariants {
   children: React.ReactNode;
 }
 
-export function Button(props: ButtonProps) {
-  return <button className={button(props)}>{props.children}</button>;
+export function Button({ color, size, children, ...props }: ButtonProps) {
+  return (
+    <button className={button({ color, size })} {...props}>
+      {children}
+    </button>
+  );
 }
 
 export default Button;

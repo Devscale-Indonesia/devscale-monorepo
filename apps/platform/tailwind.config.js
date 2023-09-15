@@ -6,7 +6,11 @@ module.exports = {
   darkMode: 'class',
   content: [join(__dirname, '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}'), ...createGlobPatternsForDependencies(__dirname)],
   theme: {
-    extend: {},
+    extend: {
+      borderWidth: {
+        1.5: '1.5px',
+      },
+    },
   },
   plugins: [],
 };
