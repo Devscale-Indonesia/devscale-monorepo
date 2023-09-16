@@ -1,4 +1,5 @@
 import { type VariantProps, tv } from 'tailwind-variants';
+import { twMerge } from 'tailwind-merge';
 
 const button = tv({
   base: 'border-1.5 border-transparent w-full bg-zinc-200 shadow-md shadow-black/20 text-white rounded-lg ',
@@ -27,11 +28,12 @@ type NativeProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 interface ButtonProps extends Omit<NativeProps, keyof ButtonVariants>, ButtonVariants {
   children: React.ReactNode;
+  className?: string;
 }
 
-export function Button({ color, size, children, ...props }: ButtonProps) {
+export function Button({ color, size, children, className, ...props }: ButtonProps) {
   return (
-    <button className={button({ color, size })} {...props}>
+    <button className={twMerge(button({ color, size }), className)} {...props}>
       {children}
     </button>
   );

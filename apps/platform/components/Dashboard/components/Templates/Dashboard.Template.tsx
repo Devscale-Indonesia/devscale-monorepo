@@ -6,7 +6,6 @@ const menu: Menu[] = [
   { label: 'Dashboard', href: '/dashboard', icon: <BarChart2 size={17} /> },
   { label: 'Courses', href: '/dashboard/course', icon: <Book size={17} /> },
   { label: 'Leaderboard', href: '/dashboard/leaderboard', icon: <Medal size={17} /> },
-  { label: 'Challenge', href: '/dashboard/challenge', icon: <Code2 size={17} /> },
   { label: 'Bootcamp', href: '/dashboard/bootcamp', icon: <Zap size={17} /> },
 ];
 
