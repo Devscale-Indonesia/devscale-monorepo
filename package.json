@@ -14,7 +14,7 @@
       "subject-case": [
         2,
         "always",
-        "sentence-case"
+        "lower-case"
       ],
       "subject-empty": [
         2,
