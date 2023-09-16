@@ -1,5 +1,5 @@
-import { Card } from '@devscale/shared-ui';
 import Avatar from 'boring-avatars';
+import { Card } from '@devscale/shared-ui';
 
 export const Profile = () => {
   return (

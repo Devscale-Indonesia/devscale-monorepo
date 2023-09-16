@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart2, Zap, Book, Medal, Code2 } from 'lucide-react';
+import { BarChart2, Book, Code2, Medal, Zap } from 'lucide-react';
 import { DashboardSidebar } from './Dashboard.Sidebar';
 
 const menu: Menu[] = [

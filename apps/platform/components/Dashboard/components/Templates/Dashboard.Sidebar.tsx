@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { Button } from '@devscale/shared-ui';
+import Image from 'next/image';
 import Logo from '../../../../public/logo.svg';
 
 interface DashboardSidebarProps {

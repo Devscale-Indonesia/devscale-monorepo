@@ -1,5 +1,5 @@
 import React from 'react';
-import { tv, type VariantProps } from 'tailwind-variants';
+import { type VariantProps, tv } from 'tailwind-variants';
 
 const card = tv({
   base: 'w-full border-1.5 border-zinc-800 rounded-lg',

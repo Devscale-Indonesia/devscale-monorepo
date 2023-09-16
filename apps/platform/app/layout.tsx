@@ -1,7 +1,7 @@
-import '../styles/global.css';
-import { Providers } from '../components/Providers/Providers';
-import { AuthTemplate } from '../components/Auth/components/Auth.Template';
 import { DM_Sans } from 'next/font/google';
+import { AuthTemplate } from '../components/Auth/components/Auth.Template';
+import { Providers } from '../components/Providers/Providers';
+import '../styles/global.css';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
