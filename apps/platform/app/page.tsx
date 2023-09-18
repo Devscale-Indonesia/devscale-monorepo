@@ -1,7 +1,7 @@
 import { Auth } from '../components/Auth/components/Auth';
 
 async function getData() {
-  const res = await fetch('http://localhost:4201/api/hello', { cache: 'no-store' });
+  const res = await fetch('https://devscale-lms-platform-api.vercel.app/api/hello', { cache: 'no-store' });
   const data = await res.json();
   return data;
 }
