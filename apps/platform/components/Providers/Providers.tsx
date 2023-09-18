@@ -7,7 +7,7 @@ import { Toaster } from 'react-hot-toast';
 export const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <Provider>
-      <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
+      <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
         <div>{children}</div>
         <Toaster position="top-right" toastOptions={{ duration: 5000 }} />
       </ThemeProvider>
