@@ -5,16 +5,12 @@ import Image from 'next/image';
 import Logo from '../../../public/logo.svg';
 import { loginDataAtom } from '../stores/auth.store';
 import { useAtom } from 'jotai';
-import { pocketbase } from '../../../../platform/utils/pocketbase';
-import toast from 'react-hot-toast';
-import { useRouter } from 'next/navigation';
 
 interface LoginProps {
   onRegisterModeClick: () => void;
 }
 
 export const Login = ({ onRegisterModeClick }: LoginProps) => {
-  const router = useRouter();
   const [loginData, setLoginData] = useAtom(loginDataAtom);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
