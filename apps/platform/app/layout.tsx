@@ -3,6 +3,9 @@ import { AuthTemplate } from '../components/Auth/components/Auth.Template';
 import { Providers } from '../components/Providers/Providers';
 import '../styles/global.css';
 
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+
 const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '700'],

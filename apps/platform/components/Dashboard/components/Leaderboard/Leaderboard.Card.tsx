@@ -4,7 +4,7 @@ import Avatar from 'boring-avatars';
 export const LeaderboardCard = () => {
   return (
     <Card>
-      <div className="grid grid-cols-5  items-center">
+      <div className="grid grid-cols-5 items-center">
         <div className="flex items-center gap-4 col-span-3">
           <Avatar size={40} name="Indra Zulfi" variant="marble" colors={['#34d399', '#a5b4fc']} />
           <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart2, Book, Code2, Medal, Zap } from 'lucide-react';
+import { BarChart2, Book, Medal, Zap } from 'lucide-react';
 import { DashboardSidebar } from './Dashboard.Sidebar';
 
 const menu: Menu[] = [
@@ -11,9 +11,9 @@ const menu: Menu[] = [
 
 export const DashboardTemplate = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="flex min-h-screen">
+    <main className="flex h-screen">
       <DashboardSidebar menu={menu} />
-      <div className="w-[calc(100vw-240px)] p-8">
+      <div className="w-[calc(100vw-240px)] p-8 overflow-y-auto">
         <div className="max-w-5xl m-auto my-12">{children}</div>
       </div>
     </main>

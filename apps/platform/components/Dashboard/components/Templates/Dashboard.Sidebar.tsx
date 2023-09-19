@@ -3,6 +3,7 @@
 import { Button } from '@devscale/shared-ui';
 import Image from 'next/image';
 import Logo from '../../../../public/logo.svg';
+import Link from 'next/link';
 
 interface DashboardSidebarProps {
   menu: Menu[];
@@ -18,10 +19,12 @@ export const DashboardSidebar = ({ menu }: DashboardSidebarProps) => {
         <div>
           {menu.map((item, index) => {
             return (
-              <Button color="ghost" key={index}>
-                <div>{item.icon}</div>
-                <div>{item.label}</div>
-              </Button>
+              <Link href={item.href} key={index}>
+                <Button color="ghost">
+                  <div>{item.icon}</div>
+                  <div>{item.label}</div>
+                </Button>
+              </Link>
             );
           })}
         </div>

@@ -19,7 +19,13 @@ export const Login = ({ onRegisterModeClick }: LoginProps) => {
   };
 
   const handleSubmitLoginCredentials = async () => {
-    console.log(loginData);
+    const { email, password } = loginData;
+    const response = await fetch('http://localhost:4201/api/v1/auth/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+    });
+    const data = await response.json();
+    console.log(data);
   };
 
   return (
