@@ -5,7 +5,7 @@ import { prisma } from '@/utils/prisma';
 export async function GET() {
   try {
     const data = await prisma.userPoint.findMany({
-      take: 20,
+      take: 10,
       include: {
         user: true,
       },

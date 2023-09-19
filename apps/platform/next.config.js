@@ -15,6 +15,9 @@ const nextConfig = {
   experimental: {
     esmExternals: 'loose',
   },
+  images: {
+    domains: ['devscale.b-cdn.net'],
+  },
 };
 
 const plugins = [
