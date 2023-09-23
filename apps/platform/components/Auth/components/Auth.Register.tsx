@@ -4,10 +4,12 @@ import { Button, Input } from '@devscale/shared-ui';
 import Image from 'next/image';
 import Logo from '../../../public/logo.svg';
 import { useRegister } from '../hooks/useRegister';
+import { useGithub } from '../hooks/useGithub';
 import Link from 'next/link';
 
 export const Register = () => {
   const { isLoading, registerData, handleChange, handleSubmitRegisterCredentials } = useRegister();
+  const { isLoading: isGithubLoading, handleContinueWithGithub } = useGithub();
 
   return (
     <main className="space-y-8 relative">
@@ -24,7 +26,7 @@ export const Register = () => {
         </Button>
       </div>
       <div className="border-b-1.5 border-zinc-800 mt-5 mb-3 h-fit" />
-      <Button disabled={isLoading} color="secondary">
+      <Button disabled={isGithubLoading} color="secondary" onClick={handleContinueWithGithub}>
         Continue with Github
       </Button>
       <div className="space-y-2">

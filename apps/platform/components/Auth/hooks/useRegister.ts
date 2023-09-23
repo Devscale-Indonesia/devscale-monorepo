@@ -2,8 +2,9 @@
 
 import { useAtom } from 'jotai';
 import { toast } from 'react-hot-toast';
-import { registerDataAtom } from '../stores/auth.store';
 import { useState } from 'react';
+import { pocketbase } from '../../../../platform/utils/pocketbase';
+import { registerDataAtom } from '../stores/auth.store';
 
 export const useRegister = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -18,24 +19,19 @@ export const useRegister = () => {
     setIsLoading(true);
     toast.loading('Registering...');
     const { username, email, name, password } = registerData;
-    const res = await fetch(`${process.env.NEXT_PUBLIC_DEV_BACKEND_URL}/api/v1/auth/register`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, email, name, password }),
-    });
-    const { data, error } = await res.json();
-    if (error) {
-      setIsLoading(false);
+    try {
+      await pocketbase.collection('users').create({ username, email, name, password, passwordConfirm: password });
       toast.remove();
-      toast.error(error.message);
+      toast.success('Registered successfully!');
+      setRegisterData({ username: '', email: '', name: '', password: '' });
+    } catch (error) {
+      console.log(error);
+      toast.remove();
+      toast.error('error');
       return;
+    } finally {
+      setIsLoading(false);
     }
-
-    setIsLoading(false);
-    setRegisterData({ username: '', email: '', name: '', password: '' });
-    console.log({ data });
-    toast.remove();
-    toast.success('Registered successfully');
   };
 
   return { isLoading, registerData, handleChange, handleSubmitRegisterCredentials };

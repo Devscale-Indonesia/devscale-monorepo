@@ -4,8 +4,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "nx run-many --target=serve --projects=platform,platform-api --parallel",
-    "build": "nx run-many --target=build --projects=platform,platform-api --parallel",
+    "start": "nx run-many --target=serve --projects=platform --parallel",
+    "build": "nx run-many --target=build --projects=platform --parallel",
     "prepare": "husky install"
   },
   "commitlint": {
