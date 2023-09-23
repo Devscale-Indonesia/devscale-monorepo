@@ -2,12 +2,11 @@ import { type VariantProps, tv } from 'tailwind-variants';
 import { twMerge } from 'tailwind-merge';
 
 const button = tv({
-  base: 'border-1.5 border-transparent w-full bg-zinc-200 shadow-md shadow-black/20 text-white rounded-lg ',
+  base: 'border-1.5 border-background-900/40 w-full bg-transparent shadow-md shadow-black/20 font-medium tracking-tight text-white rounded-lg transition duration-300 ease-in-out ',
   variants: {
     color: {
-      primary: 'bg-zinc-800  hover:bg-zinc-200 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200 dark:active:bg-zinc-300 text-white',
-      secondary:
-        'bg-zinc-800 hover:bg-zinc-200 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-zinc-800 dark:hover:text-zinc-100 dark:active:bg-zinc-800/50 text-white',
+      primary: 'bg-gradient-to-b from-background-50 to-background-200 border-0 text-background-950 hover:opacity-90 active:opacity-80 ',
+      secondary: 'bg-gradient-to-b from-background-950 to-background-900/10 hover:border-background-800 active:opacity-80 text-zinc-400 ',
       ghost: 'bg-transparent text-zinc-500 hover:text-zinc-100 hover:bg-zinc-900 flex gap-3 items-center justify-start',
     },
     size: {

@@ -1,15 +1,14 @@
+'use client';
+
 import { Button, Input } from '@devscale/shared-ui';
 import Image from 'next/image';
 import Logo from '../../../public/logo.svg';
 import { registerDataAtom } from '../stores/auth.store';
 import toast from 'react-hot-toast';
 import { useAtom } from 'jotai';
+import Link from 'next/link';
 
-interface RegisterProps {
-  onLoginModeClick: () => void;
-}
-
-export const Register = ({ onLoginModeClick }: RegisterProps) => {
+export const Register = () => {
   const [registerData, setRegisterData] = useAtom(registerDataAtom);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,27 +27,24 @@ export const Register = ({ onLoginModeClick }: RegisterProps) => {
 
   return (
     <main className="space-y-8 relative">
-      <div className="w-60 h-60 top-20 -left-20 bg-orange-400/10 absolute -z-10 rounded-full blur-3xl" />
       <div className="flex justify-center">
         <Image alt="Logo" src={Logo} width={150} height={100} />
       </div>
-      <div className="space-y-3">
+      <div className="space-y-2">
         <Input value={registerData.name || ''} name="name" placeholder="Full name" onChange={handleChange} />
         <Input value={registerData.username || ''} name="username" placeholder="Username" onChange={handleChange} />
         <Input value={registerData.email || ''} name="email" placeholder="Email" onChange={handleChange} />
         <Input value={registerData.password || ''} name="password" placeholder="Password" type="password" onChange={handleChange} />
         <Button onClick={handleSubmitRegisterCredentials}>Register</Button>
+      </div>
+      <div className="border-b-1.5 border-zinc-800 mt-5 mb-3 h-fit" />
+      <Button color="secondary">Continue with Github</Button>
+      <div className="space-y-2">
         <div>
-          <div className="border-b-1.5 border-zinc-800 mt-5 mb-3 h-fit" />
-        </div>
-        <Button color="secondary">Continue with Github</Button>
-        <div className="space-y-2 pt-6">
-          <div>
-            Have an account ?{' '}
-            <span className="link" onClick={onLoginModeClick}>
-              Login
-            </span>
-          </div>
+          Have an account ?{' '}
+          <Link href="/login">
+            <span className="link">Login</span>
+          </Link>
         </div>
       </div>
     </main>

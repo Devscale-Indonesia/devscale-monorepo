@@ -2,7 +2,7 @@ import { type VariantProps, tv } from 'tailwind-variants';
 import React from 'react';
 
 const input = tv({
-  base: ' w-full text-zinc-300 placeholder:text-zinc-600 border-zinc-900 border-1.5 focus:border-orange-600 focus:outline-none bg-zinc-900/50 rounded-lg',
+  base: 'bg-background-950 placeholder:text-zinc-700 border-1.5 border-background-900/40 focus:outline-none focus:border-background-500 active:opacity-80 rounded-lg w-full transition duration-200 ease-in-out',
   variants: {
     size: {
       md: 'py-2 px-4',
