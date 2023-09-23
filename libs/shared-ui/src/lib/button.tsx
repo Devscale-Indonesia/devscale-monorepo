@@ -2,7 +2,7 @@ import { type VariantProps, tv } from 'tailwind-variants';
 import { twMerge } from 'tailwind-merge';
 
 const button = tv({
-  base: 'border-1.5 border-background-900/40 w-full bg-transparent shadow-md shadow-black/20 font-medium tracking-tight text-white rounded-lg transition duration-300 ease-in-out ',
+  base: 'border-1.5 border-background-900/40 disabled:opacity-40 disabled:cursor-wait w-full bg-transparent shadow-md shadow-black/20 font-medium tracking-tight text-white rounded-lg transition duration-300 ease-in-out ',
   variants: {
     color: {
       primary: 'bg-gradient-to-b from-background-50 to-background-200 border-0 text-background-950 hover:opacity-90 active:opacity-80 ',

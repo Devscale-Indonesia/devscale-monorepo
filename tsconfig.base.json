@@ -15,7 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@devscale/db-utils": ["libs/db-utils/src/index.ts"],
       "@devscale/shared-ui": ["libs/shared-ui/src/index.ts"]
     }
   },
