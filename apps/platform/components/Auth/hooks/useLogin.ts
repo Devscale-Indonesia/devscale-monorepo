@@ -5,8 +5,10 @@ import { loginDataAtom } from '../stores/auth.store';
 import { toast } from 'react-hot-toast';
 import { useState } from 'react';
 import { pocketbase } from '../../../../platform/utils/pocketbase';
+import { useRouter } from 'next/navigation';
 
 export const useLogin = () => {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [loginData, setLoginData] = useAtom(loginDataAtom);
 
@@ -21,8 +23,11 @@ export const useLogin = () => {
     try {
       setIsLoading(true);
       await pocketbase.collection('users').authWithPassword(email, password);
+      pocketbase.authStore.exportToCookie({ httpOnly: false });
       toast.remove();
       toast.success('Login successful');
+      setLoginData({ email: '', password: '' });
+      router.push('/dashboard');
     } catch (error) {
       console.log(error);
       toast.remove();

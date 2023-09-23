@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { BarChart2, Book, Medal, Zap } from 'lucide-react';
 import { DashboardSidebar } from './Dashboard.Sidebar';
@@ -9,7 +11,11 @@ const menu: Menu[] = [
   { label: 'Bootcamp', href: '/dashboard/bootcamp', icon: <Zap size={17} /> },
 ];
 
-export const DashboardTemplate = ({ children }: { children: React.ReactNode }) => {
+interface DashboardTemplateProps {
+  children?: React.ReactNode;
+}
+
+export const DashboardTemplate = ({ children }: DashboardTemplateProps) => {
   return (
     <main className="flex h-screen">
       <DashboardSidebar menu={menu} />

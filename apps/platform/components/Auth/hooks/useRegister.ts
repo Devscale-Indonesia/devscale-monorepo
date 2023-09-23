@@ -5,8 +5,10 @@ import { toast } from 'react-hot-toast';
 import { useState } from 'react';
 import { pocketbase } from '../../../../platform/utils/pocketbase';
 import { registerDataAtom } from '../stores/auth.store';
+import { useRouter } from 'next/navigation';
 
 export const useRegister = () => {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [registerData, setRegisterData] = useAtom(registerDataAtom);
 
@@ -24,6 +26,7 @@ export const useRegister = () => {
       toast.remove();
       toast.success('Registered successfully!');
       setRegisterData({ username: '', email: '', name: '', password: '' });
+      router.push('/dashboard');
     } catch (error) {
       console.log(error);
       toast.remove();
