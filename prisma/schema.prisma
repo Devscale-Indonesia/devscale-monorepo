@@ -6,232 +6,31 @@ generator client {
 }
 
 datasource db {
-  provider          = "postgresql"
-  url               = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl         = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
-  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
-enum role {
+enum Role {
+  USER
   ADMIN
-  MEMBER
-}
-
-enum isPro {
-  FREE
-  PRO
-}
-
-enum Level {
-  BEGINNER
-  INTERMEDIATE
-  ADVANCE
 }
 
 enum Batch {
-  BATCH_1
-  BATCH_2
-}
-
-enum Progress {
-  ON_PROGRESS
-  DONE
-}
-
-enum Difficulties {
-  EASY
-  MEDIUM
-  HARD
+  NONE
+  A
+  B
+  C
+  D
 }
 
 model User {
-  id                  String                @id @default(uuid())
-  createdAt           DateTime              @default(now())
-  updatedAt           DateTime              @default(now())
-  fullname            String?
-  username            String                @unique
-  email               String                @unique
-  password            String?
-  bio                 String?               @db.Text
-  avatar              String?
-  role                role                  @default(MEMBER)
-  code                String?
-  batch               Batch?                @default(BATCH_1)
-  isVerified          Boolean               @default(false)
-  badges              UserBadges[]
-  enrolledUsers       EnrolledCourse[]
-  finishedLessons     FinishedLesson[]
-  finishedChallenges  FinishedChallenge[]
-  requestedCourse     RequestedCourse[]
-  voteRequestedCourse VoteRequestedCourse[]
-  point               UserPoint?
-  sessionSchedule     SessionSchedule[]
-  userReview          UserReview[]
-  dailyStandup        DailyStandup[]
-}
-
-model Badge {
-  id       String       @id @default(uuid())
-  name     String
-  image    String
-  minPoint Int
-  badges   UserBadges[]
-}
-
-model UserBadges {
-  id      String @id @default(uuid())
-  userId  String
-  user    User   @relation(references: [id], fields: [userId])
-  badgeId String
-  badge   Badge  @relation(references: [id], fields: [badgeId])
-}
-
-model Course {
-  id              String           @id @default(uuid())
-  createdAt       DateTime         @default(now())
-  updatedAt       DateTime         @default(now())
-  featuredImage   String?
-  name            String
-  slug            String
-  description     String
-  prerequirements String
-  isOnProgress    Progress         @default(DONE)
-  isPro           isPro            @default(PRO)
-  isPublished     Boolean          @default(false)
-  level           Level            @default(BEGINNER)
-  courseSection   Section[]
-  EnrolledUsers   EnrolledCourse[]
-}
-
-model Section {
-  id        String   @id @default(uuid())
+  id        String   @id @default(cuid()) @map("_id") @db.ObjectId
   createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  name      String
-  index     Int
-  courseId  String
-  course    Course   @relation(references: [id], fields: [courseId])
-  lesson    Lesson[]
-}
-
-model Lesson {
-  id              String           @id @default(uuid())
-  createdAt       DateTime         @default(now())
-  updatedAt       DateTime         @default(now())
-  title           String
-  slug            String           @unique
-  videoId         String
-  material        String
-  sectionId       String
-  section         Section          @relation(references: [id], fields: [sectionId])
-  finishedLessons FinishedLesson[]
-  point           Int              @default(15)
-}
-
-model EnrolledCourse {
-  id       String @id @default(uuid())
-  userId   String
-  user     User   @relation(references: [id], fields: [userId])
-  courseId String
-  course   Course @relation(references: [id], fields: [courseId])
-}
-
-model FinishedLesson {
-  id       String @id @default(uuid())
-  userId   String
-  user     User   @relation(references: [id], fields: [userId])
-  lessonId String
-  lesson   Lesson @relation(references: [id], fields: [lessonId])
-}
-
-model UserPoint {
-  id     String @id @default(uuid())
-  userId String @unique
-  user   User   @relation(references: [id], fields: [userId])
-  point  Int    @default(0)
-}
-
-model ResourcesCategory {
-  id        String     @id @default(uuid())
-  name      String
-  slug      String
-  resources Resource[]
-}
-
-model Resource {
-  id            String            @id @default(uuid())
-  title         String
-  slug          String            @unique
-  body          String
-  featuredImage String
-  isPublished   Boolean           @default(false)
-  categoryId    String
-  category      ResourcesCategory @relation(references: [id], fields: [categoryId])
-}
-
-model RequestedCourse {
-  id                  String                @id @default(uuid())
-  userId              String
-  user                User                  @relation(references: [id], fields: [userId])
-  title               String
-  description         String
-  voteRequestedCourse VoteRequestedCourse[]
-}
-
-model VoteRequestedCourse {
-  id                String          @id @default(uuid())
-  userId            String
-  user              User            @relation(references: [id], fields: [userId])
-  requestedCourseId String
-  requestedCourse   RequestedCourse @relation(references: [id], fields: [requestedCourseId])
-}
-
-model SessionSchedule {
-  id       String   @id @default(uuid())
-  userId   String?
-  user     User?    @relation(references: [id], fields: [userId])
-  date     DateTime
-  time     String
-  topic    String?
-  isBooked Boolean  @default(false)
-}
-
-model Challenge {
-  id                 String              @id @default(uuid())
-  title              String
-  slug               String              @unique
-  problem            String              @db.Text
-  cases              String              @db.Text
-  initialCode        String              @db.Text
-  runnerCode         String              @db.Text
-  difficulty         Difficulties        @default(EASY)
-  isPublished        Boolean             @default(false)
-  point              Int                 @default(15)
-  finishedChallenges FinishedChallenge[]
-}
-
-model FinishedChallenge {
-  id          String    @id @default(uuid())
-  userId      String
-  user        User      @relation(references: [id], fields: [userId])
-  code        String    @db.Text
-  challengeId String
-  challenge   Challenge @relation(references: [id], fields: [challengeId])
-}
-
-model UserReview {
-  id        String   @id @default(uuid())
-  createdAt DateTime @default(now())
-  userId    String
-  user      User     @relation(references: [id], fields: [userId])
-  review    String
-  point     Int
-}
-
-model DailyStandup {
-  id        String   @id @default(uuid())
-  createdAt DateTime @default(now())
-  userId    String
-  user      User     @relation(references: [id], fields: [userId])
-  isCheckin Boolean  @default(false)
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+  email     String   @unique
+  name      String?
+  password  String?
+  role      Role     @default(USER)
+  batch     Batch    @default(A)
 }

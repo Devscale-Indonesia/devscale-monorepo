@@ -16,11 +16,7 @@
         "name": "next"
       }
     ],
-    "types": ["jest", "node"],
-    "baseUrl": ".",
-    "paths": {
-      "@/utils/*": ["./utils/*"]
-    }
+    "types": ["jest", "node"]
   },
   "include": [
     "**/*.ts",
