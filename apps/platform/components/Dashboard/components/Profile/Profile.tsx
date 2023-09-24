@@ -6,7 +6,7 @@ export const Profile = () => {
     <Card className="h-full">
       <div className="space-y-8">
         <div className="flex justify-between items-center">
-          <h5>Profile</h5>
+          <h6>Profile</h6>
           <Button size="sm" color="secondary" className="w-fit">
             Public Profile
           </Button>
@@ -21,15 +21,15 @@ export const Profile = () => {
           </div>
           <div className="flex gap-12">
             <div>
-              <h1 className="font-light">98%</h1>
+              <h3 className="font-light">98%</h3>
               <div className="font-bold">Frontend</div>
             </div>
             <div>
-              <h1 className="font-light">24%</h1>
+              <h3 className="font-light">24%</h3>
               <div className="font-bold">Backend</div>
             </div>
             <div>
-              <h1 className="font-light">12%</h1>
+              <h3 className="font-light">12%</h3>
               <div className="font-bold">UI/UX</div>
             </div>
           </div>

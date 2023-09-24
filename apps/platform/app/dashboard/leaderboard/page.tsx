@@ -1,14 +1,13 @@
 import { LeaderboardCard } from '../../../../platform/components/Dashboard/components/Leaderboard/Leaderboard.Card';
+import { pocketbase } from '../../../../platform/utils/pocketbase';
 
 async function getLeaderboard() {
-  const response = await fetch('http://localhost:4201/api/v1/point');
-  const data = await response.json();
-  return data;
+  const leaderboard = await pocketbase.collection('leaderboard').getFullList();
+  return leaderboard;
 }
 
 export default async function Page() {
-  const { data: leaderboard } = await getLeaderboard();
-  console.log(leaderboard);
+  const data = await getLeaderboard();
 
   return (
     <main className="space-y-8">
@@ -17,9 +16,8 @@ export default async function Page() {
         <p>Here is the list of current available courses</p>
       </div>
       <section className="space-y-4">
-        {leaderboard.map(({ id, user, point }: UserPointsProps) => {
-          const { fullname, username, batch } = user;
-          return <LeaderboardCard key={id} fullname={fullname} username={username} point={point} batch={batch} />;
+        {data.map(({ id, fullname, points }: any) => {
+          return <LeaderboardCard key={id} fullname={fullname} username={''} point={points} batch={''} />;
         })}
       </section>
     </main>

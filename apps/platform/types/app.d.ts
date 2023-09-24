@@ -32,20 +32,6 @@ interface CourseProps {
 
 interface UserPointsProps {
   id: string;
-  userId: string;
-  point: number;
-  user: {
-    id: string;
-    createdAt: string;
-    updatedAt: string;
-    fullname: string;
-    username: string;
-    email: string;
-    bio: string;
-    avatar: string;
-    role: string;
-    code: string;
-    batch: string;
-    isVerified: boolean;
-  };
+  fullname: string;
+  points: number;
 }

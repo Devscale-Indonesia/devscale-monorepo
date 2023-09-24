@@ -7,7 +7,7 @@ const button = tv({
     color: {
       primary: 'bg-gradient-to-b from-background-50 to-background-200 border-0 text-background-950 hover:opacity-90 active:opacity-80 ',
       secondary: 'bg-gradient-to-b from-background-950 to-background-900/10 hover:border-background-800 active:opacity-80 text-zinc-400 ',
-      ghost: 'bg-transparent text-zinc-500 hover:text-zinc-100 hover:bg-zinc-900 flex gap-3 items-center justify-start',
+      ghost: 'bg-transparent shadow-none border-0 text-zinc-500 hover:text-zinc-100 hover:bg-background-900/50 flex gap-3 items-center justify-start',
     },
     size: {
       sm: 'px-2 py-1',

@@ -4,8 +4,8 @@ export const Chart = () => {
   return (
     <Card>
       <div className="space-y-8">
-        <h5>Weekly Progress</h5>
-        <div className="grid grid-cols-7 gap-6">
+        <h6>Weekly Progress</h6>
+        <div className="grid grid-cols-7 gap-5">
           {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, index) => {
             return (
               <div className="space-y-4" key={index}>
