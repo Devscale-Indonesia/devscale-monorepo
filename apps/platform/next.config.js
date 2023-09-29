@@ -16,7 +16,7 @@ const nextConfig = {
     esmExternals: 'loose',
   },
   images: {
-    domains: ['devscale.b-cdn.net'],
+    domains: ['devscale.b-cdn.net', 'devscale.fly.dev'],
   },
 };
 

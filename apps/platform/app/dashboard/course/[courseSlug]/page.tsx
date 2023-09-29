@@ -1,26 +1,27 @@
 import React from 'react';
 import { CourseSingle } from '../../../../components/Dashboard/components/Course/Course.Single';
+import { pocketbase } from '../../../../utils/pocketbase';
 
 async function getSingleCourse(courseSlug: string) {
-  const response = await fetch(`http://localhost:4201/api/v1/course?courseSlug=${courseSlug}`);
-  const data = await response.json();
-  return data;
+  const response = await pocketbase.collection('courses').getFirstListItem(`slug="${courseSlug}"`, { expand: 'sections,sections.lesson', cache: 'no-store' });
+  return response;
 }
 
 export default async function Page({ params }: { params: { courseSlug: string } }) {
   const { courseSlug } = params;
-  const { data: course } = await getSingleCourse(courseSlug);
-  const { id, name, description, featuredImage, prerequirements, level, courseSections } = course;
+  const singleCourse = await getSingleCourse(courseSlug);
+  const url = pocketbase.files.getUrl(singleCourse, singleCourse.featuredImage);
 
   return (
     <CourseSingle
-      id={id}
-      featuredImage={featuredImage}
-      name={name}
-      description={description}
-      prerequirements={prerequirements}
-      level={level}
-      courseSections={courseSections}
+      slug={singleCourse.slug}
+      id={singleCourse.id}
+      featuredImage={url}
+      name={singleCourse.title}
+      description={singleCourse.description}
+      prerequirements={''}
+      level={'level'}
+      courseSections={singleCourse.expand?.sections}
     />
   );
 }

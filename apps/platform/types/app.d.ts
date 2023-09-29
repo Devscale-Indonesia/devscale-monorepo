@@ -21,7 +21,7 @@ interface CourseProps {
   createdAt: string;
   updatedAt: string;
   featuredImage: string;
-  name: string;
+  title: string;
   slug: string;
   description: string;
   prerequirements: string;

@@ -2,7 +2,7 @@ import { Card } from '@devscale/shared-ui';
 
 export const Chart = () => {
   return (
-    <Card>
+    <Card className="min-w-[230px]">
       <div className="space-y-8">
         <h6>Weekly Progress</h6>
         <div className="grid grid-cols-7 gap-5">
