@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Logo from '../../../../public/logo.svg';
 import Link from 'next/link';
 import Avatar from 'boring-avatars';
-import { LogOut } from 'lucide-react';
+import { LogOut, Menu } from 'lucide-react';
 
 interface DashboardSidebarProps {
   menu: Menu[];
@@ -19,17 +19,20 @@ export const DashboardSidebar = ({ menu, bootcampMenu, isAdmin, adminMenu }: Das
         <div className="flex justify-between items-center pl-3">
           <Image alt="Good" src={Logo} width={120} height={240} />
         </div>
-        <div>
-          {menu.map((item, index) => {
-            return (
-              <Link href={item.href} key={index}>
-                <Button color="ghost">
-                  <div>{item.icon}</div>
-                  <div>{item.label}</div>
-                </Button>
-              </Link>
-            );
-          })}
+        <div className="space-y-2 rounded-xl">
+          <div className="w-28 pl-4 text-xs uppercase text-zinc-600">Platform</div>
+          <div>
+            {menu.map((item, index) => {
+              return (
+                <Link href={item.href} key={index}>
+                  <Button color="ghost">
+                    <div>{item.icon}</div>
+                    <div>{item.label}</div>
+                  </Button>
+                </Link>
+              );
+            })}
+          </div>
         </div>
         <div className="space-y-2 rounded-xl">
           <div className="w-28 pl-4 text-xs uppercase text-zinc-600">Bootcamp</div>
@@ -70,7 +73,7 @@ export const DashboardSidebar = ({ menu, bootcampMenu, isAdmin, adminMenu }: Das
           <p>@indrazm</p>
         </div>
         <Button color="secondary" className="w-fit p-2">
-          <LogOut size={14} />
+          <Menu size={14} />
         </Button>
       </div>
     </aside>

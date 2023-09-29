@@ -15,8 +15,8 @@ export const LeaderboardCard = ({ fullname, username, batch, point }: Leaderboar
         <div className="flex items-center gap-4 col-span-3">
           <Avatar size={40} name={fullname} variant="beam" colors={['#f97316', '#fdba74']} />
           <div>
-            <h6>{fullname}</h6>
-            <div className="link text-xs">@{username}</div>
+            <h6 className="font-normal tracking-normal">{fullname}</h6>
+            {/* <div className="link text-xs">@{username}</div> */}
           </div>
         </div>
         <div className="flex justify-end">{batch}</div>

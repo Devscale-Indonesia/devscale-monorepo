@@ -1,10 +1,10 @@
 import React from 'react';
-import { BarChart2, Book, Medal, Lock, Users, Bookmark, BarChart, Video, Activity, Calendar, Trophy } from 'lucide-react';
+import { BarChart2, Book, Medal, Lock, Users, Bookmark, BarChart, Video, Activity, Calendar, Trophy, Zap } from 'lucide-react';
 import { DashboardSidebar } from './Dashboard.Sidebar';
 
 const menu: Menu[] = [
   { label: 'Dashboard', href: '/dashboard', icon: <BarChart2 size={17} /> },
-  { label: 'Courses', href: '/dashboard/course', icon: <Book size={17} /> },
+  { label: 'Courses', href: '/dashboard/course', icon: <Zap size={17} /> },
   { label: 'Leaderboard', href: '/dashboard/leaderboard', icon: <Medal size={17} /> },
 ];
 
