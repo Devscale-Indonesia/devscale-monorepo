@@ -108,7 +108,7 @@ export const DashboardSidebar = ({ isAdmin }: DashboardSidebarProps) => {
             })}
           </div>
         </div>
-        {isAdmin ? (
+        {!isAdmin ? (
           <div className="space-y-2 rounded-xl">
             <div className="w-28 pl-4 text-xs uppercase text-zinc-600">Admin menu</div>
             <div>
