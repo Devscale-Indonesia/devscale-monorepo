@@ -8,11 +8,12 @@ import { LogOut, Menu } from 'lucide-react';
 interface DashboardSidebarProps {
   menu: Menu[];
   bootcampMenu: Menu[];
+  supportMenu: Menu[];
   adminMenu: Menu[];
   isAdmin: boolean;
 }
 
-export const DashboardSidebar = ({ menu, bootcampMenu, isAdmin, adminMenu }: DashboardSidebarProps) => {
+export const DashboardSidebar = ({ menu, bootcampMenu, supportMenu, isAdmin, adminMenu }: DashboardSidebarProps) => {
   return (
     <aside className="w-[240px] p-6 flex flex-col justify-between h-screen border-r-1.5 border-zinc-900">
       <div className="space-y-6">
@@ -30,6 +31,22 @@ export const DashboardSidebar = ({ menu, bootcampMenu, isAdmin, adminMenu }: Das
                     <div>{item.label}</div>
                   </Button>
                 </Link>
+              );
+            })}
+          </div>
+        </div>
+        <div className="space-y-2 rounded-xl">
+          <div className="w-28 pl-4 text-xs uppercase text-zinc-600 flex items-center gap-2">
+            <div>Sessions</div>
+            <div className="bg-slate-400 text-slate-800 py-0.5 px-2 text-[10px] rounded-full">SOON</div>
+          </div>
+          <div>
+            {supportMenu.map((item, index) => {
+              return (
+                <Button color="ghost" key={index}>
+                  <div>{item.icon}</div>
+                  <div>{item.label}</div>
+                </Button>
               );
             })}
           </div>

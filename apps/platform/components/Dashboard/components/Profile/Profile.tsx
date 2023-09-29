@@ -16,7 +16,7 @@ export const Profile = () => {
             <Avatar size={60} name="@indrazm" variant="beam" colors={['#f97316', '#fdba74']} />
             <div>
               <div className="text-white">Indra Zulfi Mushoddaq</div>
-              <div className="link text-sm">@indrazm</div>
+              <div className="link text-sm ">@indrazm</div>
             </div>
           </div>
           <div className="flex gap-12">
