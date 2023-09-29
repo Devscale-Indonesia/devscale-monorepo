@@ -8,7 +8,7 @@ async function getAllCourses() {
 }
 
 export default async function Page() {
-  const { data: courses } = await getAllCourses();
+  // const { data: courses } = await getAllCourses();
   return (
     <main className="space-y-8">
       <div className="flex justify-between items-center">
@@ -20,11 +20,11 @@ export default async function Page() {
           Request Courses
         </Button>
       </div>
-      <div className="grid grid-cols-2 gap-12">
+      {/* <div className="grid grid-cols-2 gap-12">
         {courses.map(({ id, name, slug }: CourseProps) => {
           return <CourseCard key={id} title={name} slug={slug} />;
         })}
-      </div>
+      </div> */}
     </main>
   );
 }

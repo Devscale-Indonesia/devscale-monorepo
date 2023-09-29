@@ -9,7 +9,7 @@ export const Chart = () => {
           {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, index) => {
             return (
               <div className="space-y-4" key={index}>
-                <div className="h-[40px] w-full bg-gradient-to-b from-emerald-400 to-indigo-300 rounded-lg"></div>
+                <div className="h-[40px] w-full bg-gradient-to-b from-orange-500 to-orange-300 rounded-lg"></div>
                 <div>{day}</div>
               </div>
             );

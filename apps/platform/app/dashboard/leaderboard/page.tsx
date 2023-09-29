@@ -2,7 +2,7 @@ import { LeaderboardCard } from '../../../../platform/components/Dashboard/compo
 import { pocketbase } from '../../../../platform/utils/pocketbase';
 
 async function getLeaderboard() {
-  const leaderboard = await pocketbase.collection('leaderboard').getFullList();
+  const leaderboard = await pocketbase.collection('leaderboard').getFullList({});
   return leaderboard;
 }
 

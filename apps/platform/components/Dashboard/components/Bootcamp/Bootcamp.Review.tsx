@@ -9,7 +9,7 @@ export const BootcampReview = () => {
   const data = 'Well done mas! \n```js\nconst value = "test"\nconsole.log(value)\n```';
 
   return (
-    <Card>
+    <Card className="bg-slate-800/20 border-slate-800/30">
       <div className="space-y-6">
         <div className="space-y-2">
           <div className="flex items-center gap-2">{/* <h5 className="text-zinc-400 text-sm flex gap-2">Assignment Review #1 </h5> */}</div>

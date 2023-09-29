@@ -13,7 +13,7 @@ export const Profile = () => {
         </div>
         <div className="grid grid-cols-2">
           <div className="flex gap-4 items-center">
-            <Avatar size={60} name="Indra Zulfi" variant="marble" colors={['#34d399', '#a5b4fc']} />
+            <Avatar size={60} name="@indrazm" variant="beam" colors={['#f97316', '#fdba74']} />
             <div>
               <div className="text-white">Indra Zulfi Mushoddaq</div>
               <div className="link text-sm">@indrazm</div>

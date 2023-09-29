@@ -3,28 +3,20 @@ import { Card } from '@devscale/shared-ui';
 
 export const BootcampProfile = () => {
   return (
-    <Card className="h-full">
-      <div className="space-y-8">
-        <div className="flex justify-between items-center">
-          <h5>Student Profile</h5>
-        </div>
-        <div className="grid grid-cols-3 items-center">
-          <div className="flex gap-4 items-center col-span-2">
-            <Avatar size={60} name="Indra Zulfi" variant="marble" colors={['#34d399', '#a5b4fc']} />
+    <Card className="h-fit">
+      <div className="flex gap-4 items-center">
+        <div className="flex gap-4 items-center col-span-4">
+          <Avatar size={48} name="@indrazm" variant="beam" colors={['#f97316', '#fdba74']} />
+          <div className="space-y-2">
             <div>
               <div className="text-white">Indra Zulfi Mushoddaq</div>
-              <div className="link text-sm">@indrazm</div>
+              <div className="link text-xs">@indrazm</div>
             </div>
-          </div>
-          <div className="grid grid-cols-8">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((day, index) => {
-              return (
-                <div className="flex flex-col items-center gap-2" key={index}>
-                  <div className="h-3 w-3 bg-gradient-to-br from-orange-500 to-orange-300 rounded"></div>
-                  <div className="w-fit">{day}</div>
-                </div>
-              );
-            })}
+            <div className="grid grid-cols-8 gap-1">
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((day, index) => {
+                return <div key={index} className="h-[10px] w-[10px] bg-gradient-to-br from-orange-500 to-orange-300 rounded"></div>;
+              })}
+            </div>
           </div>
         </div>
       </div>

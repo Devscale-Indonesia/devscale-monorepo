@@ -1,16 +1,15 @@
-import { BootcampChart } from '../../../components/Dashboard/components/Bootcamp/Bootcamp.Tools';
 import { BootcampProfile } from '../../../components/Dashboard/components/Bootcamp/Bootcamp.Profile';
 import { BootcampReview } from '../../../components/Dashboard/components/Bootcamp/Bootcamp.Review';
 
 export default async function Page() {
   return (
-    <main className="grid grid-cols-4 gap-8">
-      <BootcampChart />
-      <div className="col-span-3 h-full">
+    <main className="grid grid-cols-3 gap-8">
+      <div className="space-y-3">
+        <h5>Student Profile</h5>
         <BootcampProfile />
       </div>
-      <div></div>
-      <div className="col-span-3 h-full space-y-4">
+      <div className="space-y-3 col-span-2">
+        <h5>Assignment Review</h5>
         <BootcampReview />
       </div>
     </main>
