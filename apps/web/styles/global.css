@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'TTFirsNeue';
+  src: url('../public/fonts/TTFirsNeue-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    @apply text-sm font-medium bg-background-950 text-zinc-500;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-zinc-200 tracking-tight;
+  }
+  h1 {
+    @apply text-5xl font-bold tracking-tighter;
+  }
+  h2 {
+    @apply text-4xl;
+  }
+  h3 {
+    @apply text-3xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-lg;
+  }
+  h6 {
+    @apply text-base;
+  }
+  ul {
+    @apply pt-4 space-y-2;
+  }
+}
+
+@layer components {
+  .link {
+    @apply text-zinc-300 hover:cursor-pointer hover:underline hover:text-primary-500 transition duration-200 ease-in-out;
+  }
+}

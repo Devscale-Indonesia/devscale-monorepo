@@ -16,7 +16,7 @@ async function getSingleLesson(lessonSlug: string) {
 
 export default async function Page({ params }: PageProps) {
   const data = await getSingleLesson(params.lessonSlug);
-  const { title, videoId, material, created, updated } = data;
+  const { id, title, videoId, material, created, updated } = data;
 
-  return <LessonSingle videoId={videoId} title={title} />;
+  return <LessonSingle videoId={videoId} title={title} lessonId={id} />;
 }

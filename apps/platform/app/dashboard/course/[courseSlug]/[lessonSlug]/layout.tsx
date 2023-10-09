@@ -14,8 +14,18 @@ async function getSingleCourse(courseSlug: string) {
   return response;
 }
 
+async function getFinishedLesson(userId: string) {
+  const response = await pocketbase.collection('finished_lesson').getFullList({
+    filter: `user="${userId}"`,
+  });
+  return response;
+}
+
 export default async function Layout({ children, params }: PageProps) {
   const { expand } = await getSingleCourse(params.courseSlug);
+  const dataUser = pocketbase.authStore.model;
+  const finishedLesson = await getFinishedLesson(dataUser?.id);
+  console.log(finishedLesson);
 
   return (
     <LessonTemplate sections={expand?.sections} courseSlug={params.courseSlug}>
