@@ -5,13 +5,13 @@ import { Check, MessageSquare } from 'lucide-react';
 export default async function Index() {
   return (
     <>
-      <main className="space-y-36 my-40">
+      <main className="space-y-36 my-40 mx-12 lg:mx-0">
         <section className="flex flex-col items-center gap-8">
           <div className="bg-gradient-to-b from-zinc-700 to-zinc-400 p-[1.5px] rounded-full w-fit shadow-xl shadow-zinc-700">
             <div className="bg-black px-5 py-2 rounded-full text-white text-xs font-bold tracking-wide">BATCH 3 OPEN REGISTRATION</div>
           </div>
-          <div className="flex flex-col justify-center items-center gap-2">
-            <h1 className="bg-gradient-to-b from-zinc-100 to-zinc-400 bg-clip-text text-transparent">Fullstack Javascript Bootcamp</h1>
+          <div className="flex flex-col justify-center items-center gap-2 text-center">
+            <h1 className="bg-gradient-to-b from-zinc-100 to-zinc-400 bg-clip-text text-transparent text-3xl lg:text-5xl">Fullstack Javascript Bootcamp</h1>
             <h4 className="text-zinc-400">Empower Your Dreams: 8 Weeks to Full Stack Mastery!</h4>
           </div>
           <div className="flex flex-col items-center space-y-4">
@@ -50,7 +50,7 @@ export default async function Index() {
             <h5 className="pl-6">Best Practice</h5>
           </div>
         </section>
-        <section className="grid grid-cols-3 gap-6">
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-8 rounded-xl transition duration-300 ease-in-out">
             <h4>HTML</h4>
             <p>Sharpen HTML skills for structured webpages and atomic design.</p>
@@ -77,8 +77,8 @@ export default async function Index() {
           </div>
         </section>
         <section className="space-y-6 relative">
-          <h1 className="absolute top-0 -left-9 text-[72px]">&quot;</h1>
-          <h2 className="font-normal italic text-zinc-500 ">
+          <h1 className="absolute top-0 -left-9 text-[72px] hidden lg:block">&quot;</h1>
+          <h2 className="font-normal italic text-zinc-500 text-3xl lg:text-4xl ">
             Background saya SEO specialist, ingin tambah ilmu tentang Fullstack JS dan ketemulah Devscale Indonesia. Dan ini adalah investasi terbaik saya di
             tahun 2023, tidak kecewa karena langsung di mentorin mas Indra yg gak pelit ilmu dan semangat buat mengajarnya bikin saya gak menyerah untuk kejar
             mimpi saya untuk jadi lebih baik lagi! Recommended polll!
@@ -94,7 +94,7 @@ export default async function Index() {
             <div>Rahma Safitri- SEO Specialist</div>
           </div>
         </section>
-        <section className="grid grid-cols-3 gap-6">
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="space-y-6">
             <h4 className="text-zinc-500 italic">
               Bootcamp yang seru , mentor yang sangat tulus . Dengan biaya yang semuraah itu , dapet ilmu yang bener-bener bermanfaat, ga bakal pernah nyesel
@@ -151,7 +151,7 @@ export default async function Index() {
         <section className="space-y-8">
           <h2>What you will learn</h2>
           <div className="w-12 border-b-2 border-primary-500" />
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-16 rounded-xl transition duration-300 ease-in-out">
               <div>
                 <h4>Week 1</h4>
@@ -277,7 +277,7 @@ export default async function Index() {
               </p>
             </div>
           </div>
-          <section className="grid grid-cols-2 gap-12 pt-12">
+          <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-12">
             <div className="space-y-6">
               <h4 className="text-zinc-500 italic">
                 Mas Indra benar-benar mendedikasikan dirinya sebagai mentor. Beliau mengajar dengan penuh semangat sehingga student juga ikut semangat. Beliau
@@ -371,7 +371,7 @@ export default async function Index() {
         <section className="space-y-8">
           <h2>Pricing and Benefits</h2>
           <div className="w-12 border-b-2 border-primary-500" />
-          <div className="grid grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="bg-gradient-to-br from-primary-500 to-rose-700 p-12 rounded-xl space-y-2">
               <h5 className="text-black">Early bird</h5>
               <h1 className="text-7xl text-black">899K</h1>
