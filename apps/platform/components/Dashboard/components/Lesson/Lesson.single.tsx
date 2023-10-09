@@ -36,9 +36,9 @@ export const LessonSingle = ({ title, videoId, lessonId }: LessonSingleProps) =>
       </div>
       <div className="p-8 flex justify-between items-end">
         <h4>{title}</h4>
-        <Button className="w-fit" onClick={markAsCompleted}>
+        {/* <Button className="w-fit" onClick={markAsCompleted}>
           Mark as completed
-        </Button>
+        </Button> */}
       </div>
     </main>
   );

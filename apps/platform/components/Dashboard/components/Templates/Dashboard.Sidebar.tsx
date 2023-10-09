@@ -27,7 +27,7 @@ const menu: Menu[] = [
   { label: 'Dashboard', href: '/dashboard', icon: <BarChart2 size={17} /> },
   { label: 'Courses', href: '/dashboard/course', icon: <Zap size={17} /> },
   { label: 'Resources', href: '/dashboard/resources', icon: <Box size={17} /> },
-  { label: 'Leaderboard', href: '/dashboard/leaderboard', icon: <Medal size={17} /> },
+  // { label: 'Leaderboard', href: '/dashboard/leaderboard', icon: <Medal size={17} /> },
 ];
 
 const supportMenu: Menu[] = [

@@ -44,10 +44,10 @@ export default async function Index() {
               />
             </div>
           </div>
-          <div className="flex gap-4 divide-x-2 space-x-3 items-center">
+          <div className="flex flex-col lg:flex-row gap-4 divide-y-2 lg:divide-x-2 lg:space-x-3 justify-center items-center">
             <h5>Fast-Pace</h5>
-            <h5 className="pl-6">Immersive Program</h5>
-            <h5 className="pl-6">Best Practice</h5>
+            <h5 className="pt-4 lg:pl-6">Immersive Program</h5>
+            <h5 className="pt-4 lg:pl-6">Best Practice</h5>
           </div>
         </section>
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -152,7 +152,7 @@ export default async function Index() {
           <h2>What you will learn</h2>
           <div className="w-12 border-b-2 border-primary-500" />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-16 rounded-xl transition duration-300 ease-in-out">
+            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-6 lg:p-16 rounded-xl transition duration-300 ease-in-out">
               <div>
                 <h4>Week 1</h4>
                 <h5 className="text-zinc-500">Introduction to web Development</h5>
@@ -165,7 +165,7 @@ export default async function Index() {
               </ul>
             </div>
 
-            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-16 rounded-xl transition duration-300 ease-in-out">
+            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-6 lg:p-16 rounded-xl transition duration-300 ease-in-out">
               <div>
                 <h4>Week 2</h4>
                 <h5 className="text-zinc-500">Javascript Basic and NodeJs</h5>
@@ -178,7 +178,7 @@ export default async function Index() {
               </ul>
             </div>
 
-            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-16 rounded-xl transition duration-300 ease-in-out">
+            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-6 lg:p-16 rounded-xl transition duration-300 ease-in-out">
               <div>
                 <h4>Week 3</h4>
                 <h5 className="text-zinc-500">Javascript Intermediate</h5>
@@ -191,7 +191,7 @@ export default async function Index() {
               </ul>
             </div>
 
-            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-16 rounded-xl transition duration-300 ease-in-out">
+            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-6 lg:p-16 rounded-xl transition duration-300 ease-in-out">
               <div>
                 <h4>Week 4</h4>
                 <h5 className="text-zinc-500">Modern Web Stack</h5>
@@ -204,7 +204,7 @@ export default async function Index() {
               </ul>
             </div>
 
-            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-16 rounded-xl transition duration-300 ease-in-out">
+            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-6 lg:p-16 rounded-xl transition duration-300 ease-in-out">
               <div>
                 <h4>Week 5</h4>
                 <h5 className="text-zinc-500">Introduction to web Development</h5>
@@ -217,7 +217,7 @@ export default async function Index() {
               </ul>
             </div>
 
-            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-16 rounded-xl transition duration-300 ease-in-out">
+            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-6 lg:p-16 rounded-xl transition duration-300 ease-in-out">
               <div>
                 <h4>Week 6</h4>
                 <h5 className="text-zinc-500">NextJs as Backend</h5>
@@ -230,7 +230,7 @@ export default async function Index() {
               </ul>
             </div>
 
-            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-16 rounded-xl transition duration-300 ease-in-out">
+            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-6 lg:p-16 rounded-xl transition duration-300 ease-in-out">
               <div>
                 <h4>Week 7</h4>
                 <h5 className="text-zinc-500">Building Fullstack Application</h5>
@@ -243,7 +243,7 @@ export default async function Index() {
               </ul>
             </div>
 
-            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-16 rounded-xl transition duration-300 ease-in-out">
+            <div className="border-2 bg-background-900/20 space-y-2 hover:border-background-600 border-background-900/40 p-6 lg:p-16 rounded-xl transition duration-300 ease-in-out">
               <div>
                 <h4>Week 8</h4>
                 <h5 className="text-zinc-500">Building Fullstack Application</h5>
@@ -442,8 +442,8 @@ export default async function Index() {
           <div className="space-y-2">
             <h4>Bagaimana pace dari program ini?</h4>
             <p className="text-xl font-normal">
-              Program ini menggunakan fast-track pace, artinya kita hanya belajar hal-hal yang practical saja dengan metode yang cepat, adapun fundamental
-              wawasan bisa kamu pelajari dari devscale platform.
+              <strong className="text-primary-500">Program ini menggunakan fast-track pace</strong>, artinya kita hanya belajar hal-hal yang practical saja
+              dengan metode yang cepat dan padat, adapun tambahan wawasan bisa kamu pelajari dari devscale platform.
             </p>
           </div>
 
@@ -464,7 +464,7 @@ export default async function Index() {
           <div className="space-y-2">
             <h4>Apakah harus punya pengalaman coding untuk ikut bootcamp ini?</h4>
             <p className="text-xl font-normal">
-              Tentu! selagi mau konsisten belajar dan mau bekerja keras untuk mengikuti pelajarannya kamu akan dapat impact yang besar.
+              Tidak, kamu tidak harus punya pengalaman Coding, hanya saja dengan punya pengalaman Coding, Bootcamp yang kamu ikuti akan lebih mudah dipahami.
             </p>
           </div>
 
