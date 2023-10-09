@@ -44,10 +44,10 @@ export default async function Index() {
               />
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row gap-4 divide-y-2 lg:divide-x-2 lg:space-x-3 justify-center items-center">
+          <div className="flex flex-col lg:flex-row gap-4 divide-y-2 lg:divide-y-0 lg:divide-x-2 lg:space-x-3 justify-center items-center">
             <h5>Fast-Pace</h5>
-            <h5 className="pt-4 lg:pl-6">Immersive Program</h5>
-            <h5 className="pt-4 lg:pl-6">Best Practice</h5>
+            <h5 className="pt-4 lg:pt-0 lg:pl-6">Immersive Program</h5>
+            <h5 className="pt-4 lg:pt-0 lg:pl-6">Best Practice</h5>
           </div>
         </section>
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
