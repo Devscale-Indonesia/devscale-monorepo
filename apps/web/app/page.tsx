@@ -396,11 +396,13 @@ export default async function Index() {
               <h4 className="text-white">Pendaftaran Bootcamp disini</h4>
               <p className="text-zinc-400">Pembayaran fee langsung dilakukan setelah melakukan register untuk book seat.</p>
             </div>
-            <button className="bg-gradient-to-br from-primary-500 to-rose-700 px-4 py-2 rounded-lg text-black space-y-2">Register</button>
+            <a href="https://tally.so/r/mDpdyb" target="_blank">
+              <button className="bg-gradient-to-br from-primary-500 to-rose-700 px-4 py-2 rounded-lg text-black space-y-2">Register</button>
+            </a>
           </div>
         </section>
         <section className="space-y-8">
-          <h2>Bootcamp Outcomes</h2>
+          <h2>Bootcamp Method</h2>
           <div className="w-12 border-b-2 border-primary-500" />
           <p className="text-xl font-normal">
             <span className="text-white font-medium"> Fullstack Javascript Bootcamp akan dimulai dari Sabtu, 29 Oktober 2023, selama 32 sesi.</span>{' '}
@@ -415,6 +417,7 @@ export default async function Index() {
             Peserta belajar akan diberikan jadwal agar bisa melakukan session 1:1 private dengan pengajar setiap minggunya, boleh bertanya / mentoring seputar
             kelas, karir, pekerjaan, atau apapun.
           </p>
+          <Image src="/Session.png" width={1200} height={600} alt="Session" className="rounded-lg" />
         </section>
         <section className="space-y-8">
           <h2>Devscale Learning Platform</h2>
@@ -474,8 +477,10 @@ export default async function Index() {
           </div>
         </section>
       </main>
-      <div className="fixed bottom-2 -right-6 bg-emerald-100 hover:bg-emerald-400 text-emerald-900 cursor-pointer font-bold tracking-tight p-4 rounded-xl flex gap-2 items-center transition duration-300 ease-in-out scale-75">
-        <MessageSquare /> Ada pertanyaan ? Whatsapp disini
+      <div className="fixed bottom-2 -right-6 bg-emerald-100 hover:bg-emerald-400 text-emerald-900 cursor-pointer font-bold tracking-tight p-4 rounded-xl transition duration-300 ease-in-out scale-75">
+        <a href="https://api.whatsapp.com/send/?phone=62881082447028&text&type=phone_number&app_absent=0" className="flex gap-2 items-center">
+          <MessageSquare /> Ada pertanyaan ? Whatsapp disini
+        </a>
       </div>
     </>
   );
