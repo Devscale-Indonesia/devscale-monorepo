@@ -418,6 +418,76 @@ export default async function Index() {
             kelas, karir, pekerjaan, atau apapun.
           </p>
           <Image src="/Session.png" width={1200} height={600} alt="Session" className="rounded-lg" />
+          <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-12">
+            <div className="space-y-6">
+              <h4 className="text-zinc-500 italic">
+                Membuka wawasan saya dalam bekerja remote dan sharing pengalaman bekerja saya serelevan apa di zaman sekarang serta meyakinkan saya bahwa selain
+                belajar otodidak, dengan adanya mentoring seperti ini membuat saya belajar lebih terarah saat 1:1 Session.
+              </h4>
+              <div className="flex items-center gap-4">
+                <Image
+                  src="https://cdn.discordapp.com/avatars/405418024032534540/6e642f567fbc168e8dfa7b69f06b1a1d.webp"
+                  width={32}
+                  height={32}
+                  alt="profile"
+                  className="rounded-full"
+                />
+                <p>Dimas Anahda - Mobile Dev</p>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <h4 className="text-zinc-500 italic">
+                bagus sekali, banyak dapat insight, cm saya sndiri yang kurang bisa memanfaatkannya, karena kurang bisa eksplore, sehingga kurang bisa juga
+                memaksimalkan 1:1 session
+              </h4>
+              <div className="flex items-center gap-4">
+                <Image
+                  src="https://cdn.discordapp.com/avatars/1138014382664712222/a8230b5ed7a4496096a122c9c9d3d0e8.webp"
+                  width={32}
+                  height={32}
+                  alt="profile"
+                  className="rounded-full"
+                />
+                <p>Hendra Irawan - Islamic Student</p>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <h4 className="text-zinc-500 italic">
+                Ini salah satu yg spesial dari bootcamp ini yang tidak semua bootcamp memiliki program ini. Karena peserta bisa langsung bertanya, diskusi dan
+                mendapat masukan secara langsung dari pengajar. Karena kalau dikelas biasanya karena banyak peserta jadi waktu nya terbatas untuk bertanya
+              </h4>
+              <div className="flex items-center gap-4">
+                {/* <Image
+                  src="https://cdn.discordapp.com/avatars/437089607352451092/a2cf37cec257145166ce6f366b424170.webp"
+                  width={32}
+                  height={32}
+                  alt="profile"
+                  className="rounded-full"
+                /> */}
+                <div className="bg-gradient-to-br from-primary-400 bg-rose-300 rounded-full w-8 h-8" />
+                <p>Faqih Nur Fahmi - HR</p>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <h4 className="text-zinc-500 italic">
+                Saya pernah ikut bootcamp lain tapi tidak mendapatkan kenyamanan (dibatasi mentoring 1x saja dan dibatasi waktu 10-15 menit saja) seperti saya
+                mengikuti bootcamp devscale. 1:1 Session adalah favorit banget karena langsung dengan Mas Indra, ga malu buat nanya-nanya.
+              </h4>
+              <div className="flex items-center gap-4">
+                <Image
+                  src="https://cdn.discordapp.com/avatars/449212257805533198/54ae6d06a04871cac8163e49620d3f24.webp"
+                  width={32}
+                  height={32}
+                  alt="profile"
+                  className="rounded-full"
+                />
+                <p>Saiful Arif - Backend Dev</p>
+              </div>
+            </div>
+          </section>
         </section>
         <section className="space-y-8">
           <h2>Devscale Learning Platform</h2>
