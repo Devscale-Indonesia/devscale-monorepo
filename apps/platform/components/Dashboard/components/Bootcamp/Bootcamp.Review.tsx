@@ -10,9 +10,9 @@ export const BootcampReview = () => {
 
   return (
     <Card className="bg-slate-800/20 border-slate-800/30">
-      <div className="space-y-6">
+      <div className="text-center">No review yet</div>
+      {/* <div className="space-y-6">
         <div className="space-y-2">
-          <div className="flex items-center gap-2">{/* <h5 className="text-zinc-400 text-sm flex gap-2">Assignment Review #1 </h5> */}</div>
           <MDEditor.Markdown source={data} style={{ background: 'transparent' }} />
         </div>
         <div className="flex justify-between gap-2 items-center">
@@ -25,7 +25,7 @@ export const BootcampReview = () => {
           </div>
           <p className="text-xs text-zinc-600">Sunday, 12 Jan 2023</p>
         </div>
-      </div>
+      </div> */}
     </Card>
   );
 };

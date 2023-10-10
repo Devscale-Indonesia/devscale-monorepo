@@ -6,10 +6,21 @@ import Logo from '../../../public/logo.svg';
 import { useLogin } from '../hooks/useLogin';
 import { useGithub } from '../hooks/useGithub';
 import Link from 'next/link';
+import { pocketbase } from '../../../utils/pocketbase';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export const Login = () => {
+  const router = useRouter();
   const { isLoading, loginData, handleChange, handleSubmitLoginCredentials } = useLogin();
   const { isLoading: isGithubLoading, handleContinueWithGithub } = useGithub();
+  const user = pocketbase.authStore.isValid;
+
+  useEffect(() => {
+    if (user) {
+      router.push('/dashboard');
+    }
+  }, [user]);
 
   return (
     <main className="space-y-8 relative">

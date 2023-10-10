@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { usePathname } from 'next/navigation';
-
 import { DashboardSidebar } from './Dashboard.Sidebar';
 
 interface DashboardTemplateProps {
@@ -12,7 +11,6 @@ interface DashboardTemplateProps {
 
 export const DashboardTemplate = ({ children, isAdmin = false }: DashboardTemplateProps) => {
   const pathname = usePathname();
-  console.log(pathname.split('/'));
   return (
     <main className="flex h-screen">
       <DashboardSidebar isAdmin={isAdmin} />

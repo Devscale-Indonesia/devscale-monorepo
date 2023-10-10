@@ -22,6 +22,7 @@ import {
   ScrollText,
   Box,
 } from 'lucide-react';
+import { ProfileMenu } from './Dashboard.ProfileMenu';
 
 const menu: Menu[] = [
   { label: 'Dashboard', href: '/dashboard', icon: <BarChart2 size={17} /> },
@@ -126,15 +127,7 @@ export const DashboardSidebar = ({ isAdmin }: DashboardSidebarProps) => {
           </div>
         ) : null}
       </div>
-      <div className="flex justify-between items-center pl-4">
-        <div className="flex items-center gap-2">
-          <Avatar size={32} name="@indrazm" variant="beam" colors={['#f97316', '#fdba74']} />
-          <p>@indrazm</p>
-        </div>
-        <Button color="secondary" className="w-fit p-2">
-          <Menu size={14} />
-        </Button>
-      </div>
+      <ProfileMenu />
     </aside>
   );
 };
